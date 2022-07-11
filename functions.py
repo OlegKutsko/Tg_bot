@@ -1,4 +1,3 @@
-import pandas as pd
 import matplotlib.pyplot as plt
 from .consts import (PRODUCT, TRANSPORT, HOUSE, CAR, CLOTHES, OPLATI)
 
