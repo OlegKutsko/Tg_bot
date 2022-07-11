@@ -1,5 +1,5 @@
 import telebot
-import func
+import functions
 import config
 
 #Token from @BotFather
