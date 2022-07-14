@@ -1,18 +1,18 @@
 import matplotlib.pyplot as plt
-from .consts import (PRODUCT, TRANSPORT, HOUSE, CAR, CLOTHES, OPLATI)
+from consts import (PRODUCT, TRANSPORT, HOUSE, CAR, CLOTHES, OPLATI, EXP, LABELS)
 
 
 def create_sum():
-    result = sum(PRODUCT, TRANSPORT, HOUSE, CAR, CLOTHES, OPLATI)
+    result = PRODUCT+TRANSPORT+HOUSE+CAR+CLOTHES+OPLATI
     return (
-        f'Одежда: {CLOTHES} \nПродукты: {PRODUCT} \nТранспорт: {TRANSPORT} \nПродукты для дома: {HOUSE}'
-        f'\nМашина: {CAR} \nОплати: {OPLATI} \nИтого расходов: {result}')
+        f'Одежда: {CLOTHES} \nПродукты: {PRODUCT} \nТранспорт: {TRANSPORT} \n'
+        f'Продукты для дома: {HOUSE}\nМашина: {CAR} \nОплати: {OPLATI} \nИтого расходов: {result}')
 
 
 def grafic():
-    labels = ['Продукты', 'Транспорт', 'Товары для дома', 'Машина', 'Одежда', 'Оплати']    # Вынести в константы можно
     categories = [PRODUCT, TRANSPORT, HOUSE, CAR, CLOTHES, OPLATI]
-    explode = [0.01, 0.01, 0.01, 0.01, 0.01, 0.01]  # Генерить динамически
-    plt.pie(categories, labels=labels, explode=explode, autopct='%.0f%%')
+    explode = [EXP for i in range(len(categories))]
+    plt.pie(categories, labels=LABELS, explode=explode, autopct='%.0f%%')
     plt.savefig('graphic', dpi=200)
 
+print(create_sum())

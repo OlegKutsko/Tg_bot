@@ -1,4 +1,5 @@
 import telebot
+import consts
 import functions
 import config
 
@@ -20,8 +21,8 @@ def handle_docs(message):
     src = 'C:\\Users\\User\\PycharmProjects\\pythonProject\\Tg_bot\\Received\\ ' + message.document.file_name
     with open(src, 'wb') as new_file:
         new_file.write(downloaded_file)
-    bot.send_message(message.chat.id, func.processing_csv_file(message.document.file_name))
-    func.grafic(message.document.file_name)
+    bot.send_message(message.chat.id, functions.create_sum())
+    functions.grafic()
     graphic = open('graphic.png', 'rb')
     bot.send_photo(message.chat.id, graphic)
 
